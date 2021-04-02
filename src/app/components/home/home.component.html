@@ -1,0 +1,25 @@
+<clr-datagrid>
+    <!-- <clr-dg-column></clr-dg-column> -->
+    <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+    <clr-dg-column>First brewed</clr-dg-column>
+    <clr-dg-column>Actions</clr-dg-column>
+
+    <clr-dg-placeholder>We couldn't find any results!</clr-dg-placeholder>
+  
+    <clr-dg-row *clrDgItems="let beer of beersList">
+        <!-- <clr-dg-cell style="text-align: center;">
+            <img [src]="beer.image_url" [alt]="beer.name" />
+        </clr-dg-cell> -->
+        <clr-dg-cell>{{ beer.name }}</clr-dg-cell>
+        <clr-dg-cell>{{ beer.first_brewed }}</clr-dg-cell>
+        <clr-dg-cell>
+            <button class="btn btn-primary btn-sm" (click)="seeInfo(beer)">+ Info</button>
+        </clr-dg-cell>
+    </clr-dg-row>
+  
+    <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="10">
+            {{ pagination.firstItem + 1 }} - {{ pagination.lastItem + 1 }} of {{ pagination.totalItems }} results
+        </clr-dg-pagination>
+    </clr-dg-footer>
+</clr-datagrid>
