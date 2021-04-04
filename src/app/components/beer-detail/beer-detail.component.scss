@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+img {
+    max-width: 100px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#beer-info {
+    margin-top: 3em;
+}
+
+.abv-info {
+    margin-top: 2em;
+    background: grey;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    width: 7em;
+    height: 7em;
+    align-items: center;
+    box-shadow: black 2px 2px 21px -6px;
+    color: white;
+    font-weight: bold;
+}
+
+#beer-info > .clr-row:first-child {
+    margin-bottom: 4em;
+}
+
+#beer-info > .clr-row:last-child {
+    margin-bottom: 4em;
+}
+
+.tip-row {
+    margin-top: 2em;
+}
+
+#ingredients {
+    font-family: "Indie Flower", cursive;
+    letter-spacing: 0.1rem;
+    background-image: linear-gradient(90deg, #e8b6b6, 2px, rgba(255,255,255,0), 2px, rgba(255,255,255,0)), linear-gradient(0, #d9eaf3, 1px, rgba(255,255,255,0), 2px, rgba(255,255,255,0));
+    background-position: 4rem 0;
+    background-size: 100% 2.4rem;
+    color: #111;
+    padding: 2.2rem 0 0 5rem;  
+    white-space: nowrap;
+    counter-reset: listCounter;
+}
+
+#ingredients > h1 {
+    font-family: "Indie Flower", cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+}
+
+#ingredients > h1 > cds-icon {
+    vertical-align: top;
+}
+
+#ingredients > h1 > span {
+    margin-left: 15px;
+}
+
+#ingredients > h2 {
+    font-family: "Indie Flower", cursive;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    // border-bottom: 2px solid #111;
+    text-decoration: underline;
+}
+
+#ingredients > ul {
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding-left: 0.5rem;
+    margin-bottom: 1.8rem;
+}
+
+#ingredients > span {
+    font-size: 1rem;
+}
+
+#food-pairing {
+    margin-left: 4em;
+}
+
+#food-pairing > .title {
+    display: flex;
+    margin-bottom: 2em;
+}
+
+#food-pairing > .title > h2 {
+    margin-left: 10px;
+}
+
+.tip {
+    background: #E3F4FC;
+    padding: 1.5em;
+    border-radius: 5px;
+    border-left: 4px #01577A solid !important;
+    border: 1px #01577A solid;
+    font-size: 0.9em;
+    width: 80%;
+}
+
+.tip > cds-icon {
+    margin-right: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.title > cds-icon {
+    vertical-align: top;
+    color: black;
+}

@@ -1,1 +1,88 @@
-<p>beer-detail works!</p>
+<div class="clr-row">
+    <button class="btn btn-link" routerLink="/">
+        <cds-icon shape="angle-left"></cds-icon> Back
+    </button>
+</div>
+
+<div id="beer-info">
+    <div class="clr-row">
+        <div class="clr-col center-content">
+            <img [src]="data.image_url" />
+        </div>
+        <div class="clr-col">
+            <div class="clr-row">
+                <div class="clr-col">
+                    <h2>{{ data.name }}</h2>
+                </div>
+                <div class="clr-col center-content">
+                    <span class="label label-info">{{ data.first_brewed }}</span>
+                </div>
+            </div>
+            <div class="clr-row">
+                <div class="clr-col">
+                    <span class="p4">{{ data.tagline }}</span>
+                </div>
+            </div>
+
+            <div class="clr-row">
+                <div class="clr-col">
+                    <p>{{ data.description }}</p>
+                </div>
+            </div>
+            
+            <div class="clr-row">
+                <div class="clr-col">
+                    <div class="abv-info">
+                        {{ data.abv }}% VOL
+                    </div>
+                </div>
+            </div>
+
+            <div class="clr-row tip-row">
+                <div class="clr-col">
+                    <div class="tip">
+                        <cds-icon shape="lightbulb" size="md" status="info"></cds-icon>
+                        <span class="bold">Did you know...</span>
+                        {{ data.brewers_tips }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr-row">
+        <div id="ingredients" class="clr-col">
+            <h1>
+                <cds-icon shape="ingredients" size="lg"></cds-icon>
+                <span>Ingredients</span>
+            </h1>
+            
+            <h2>Hops</h2>
+
+            <ul>
+                <li *ngFor="let h of data.ingredients.hops">{{ h.name }}</li>
+            </ul>
+
+            <h2>Malt</h2>
+
+            <ul>
+                <li *ngFor="let m of data.ingredients.malt">{{ m.name }}</li>
+            </ul>
+
+            <h2>Yeast</h2>
+            <br/>
+            <span>{{ data.ingredients.yeast }}</span>
+            
+        </div>
+        <div id="food-pairing" class="clr-col">
+            <div class="title">
+                <cds-icon shape="food" size="lg"></cds-icon>
+                <h2>Food pairing</h2>
+            </div>
+
+            <ul>
+                <li *ngFor="let b of data.food_pairing">{{ b }}</li>
+            </ul>
+        </div>
+    </div>
+</div>

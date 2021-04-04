@@ -10,27 +10,23 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  beersList: any = [];
+  beersList: Array<object> = [];
 
   constructor(public beerService: BeerService, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getBeers();
   }
 
-  getBeers() {
-    return this.beerService.getBeers().subscribe(data => {
+  getBeers(): object {
+    // tslint:disable-next-line: deprecation
+    return this.beerService.getAllBeers().subscribe(data => {
       this.beersList = data;
     });
   }
 
-  seeInfo(beer: object) {
-    console.log(beer);
-    let data: object = JSON.parse(JSON.stringify(beer));
-    // console.log(beer.id);
-    console.log(typeof beer);
-    console.log(typeof data);
-    // this.router.navigateByUrl('/detail/', beer.id)
+  seeInfo(beer: any): void {
+    this.router.navigate(['/detail', beer.id]);
   }
 
 }
