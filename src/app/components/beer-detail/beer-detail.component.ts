@@ -9,16 +9,19 @@ import { BeerService } from '../../services/beer.service';
 })
 export class BeerDetailComponent implements OnInit {
 
-  id = '';
   data: any = {};
 
   constructor(private route: ActivatedRoute, public beerService: BeerService) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params.id;
+    this.getBeer();
+  }
+
+  getBeer(): void {
+    const id = this.route.snapshot.params.id;
 
     // tslint:disable-next-line: deprecation
-    this.beerService.getBeer(this.id).subscribe((value) => {
+    this.beerService.getBeer(id).subscribe((value) => {
       this.data = value[0];
     });
   }
